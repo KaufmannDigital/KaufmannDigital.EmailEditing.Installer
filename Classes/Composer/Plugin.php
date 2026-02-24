@@ -37,12 +37,13 @@ class Plugin implements PluginInterface, EventSubscriberInterface
         $packagePath = $event->getComposer()->getInstallationManager()
             ->getInstallPath($package);
 
-        $result = shell_exec(sprintf('cd %s && npm install 2>&1', escapeshellarg($packagePath)));
+        exec(sprintf('cd %s && npm install 2>&1', escapeshellarg($packagePath)), $output, $returnCode);
 
-        if (is_string($result)) {
+        if ($returnCode === 0) {
             $event->getIO()->write('🥳 Successfully installed MJML Node-Modules for package spatie/mjml-php');
         } else {
-            $event->getIO()->writeError('Failed to install MJML Node-Modules for package spatie/mjml-php');
+            $event->getIO()->writeError('🤬 Failed to install MJML Node-Modules for package spatie/mjml-php');
+            $event->getIO()->writeError(implode(PHP_EOL, $output));
         }
     }
 }
