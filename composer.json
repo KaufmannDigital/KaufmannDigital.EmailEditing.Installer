@@ -10,7 +10,7 @@
     },
     "autoload": {
         "psr-4": {
-            "KaufmannDigital\\EmailEditing\\Installer\\Composer\\": "Classes/"
+            "KaufmannDigital\\EmailEditing\\Installer\\": "Classes/"
         }
     },
     "extra": {
