@@ -1,0 +1,19 @@
+{
+    "name": "kaufmanndigital/email-editing-installer",
+    "description": "Composer plugin to install MJML Node-Modules for kaufmanndigital/email-editing",
+    "type": "composer-plugin",
+    "require": {
+        "composer-plugin-api": "^2.0"
+    },
+    "require-dev": {
+        "composer/composer": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "KaufmannDigital\\EmailEditing\\Installer\\Composer\\": "Classes/"
+        }
+    },
+    "extra": {
+        "class": "KaufmannDigital\\EmailEditing\\Installer\\Composer\\Plugin"
+    }
+}
