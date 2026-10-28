@@ -9,7 +9,7 @@ composer config allow-plugins.kaufmanndigital/email-editing-installer true
 composer require kaufmanndigital/email-editing-installer
 ```
 
-Not needed if EmailEditing renders MJML via an API (`mjmlRendering.converter.mode: 'api'`).
+Requires Node.js >= 20 (MJML 5) and npm on the machine running Composer and rendering the emails. Not needed if EmailEditing renders MJML via an API (`mjmlRendering.converter.mode: 'api'`).
 
 ## Versions
 
